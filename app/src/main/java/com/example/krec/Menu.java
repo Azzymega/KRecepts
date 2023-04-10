@@ -9,8 +9,8 @@ import android.widget.Button;
 
 public class Menu extends AppCompatActivity{
 
-    Button brownie;
-    Button kulichShuchenka;
+    protected Button brownie;
+    protected Button kulichShuchenka;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
