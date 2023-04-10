@@ -15,5 +15,11 @@
             android:layout_height="200dp"
             android:text="Брауни" />
 
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:text="Кулич с вареной сгущенкой и грецкими орехами" />
+
     </LinearLayout>
 </ScrollView>

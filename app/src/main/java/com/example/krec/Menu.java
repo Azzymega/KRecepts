@@ -7,22 +7,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Menu extends AppCompatActivity implements View.OnClickListener {
+public class Menu extends AppCompatActivity{
 
     Button brownie;
+    Button kulichShuchenka;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         brownie = findViewById(R.id.button);
-        brownie.setOnClickListener(this::onClick);
+        kulichShuchenka = findViewById(R.id.button2);
+        brownie.setOnClickListener(this::onBrownieClick);
+        kulichShuchenka.setOnClickListener(this::onKulichShuchenkaClick);
     }
-
-    @Override
-    public void onClick(View view) {
+    public void onKulichShuchenkaClick(View view){
         Intent intent = new Intent(this,MainActivity.class);
-        Brownie brownie = new Brownie();
-        intent.putExtra("Recept", brownie);
+        intent.putExtra("Recept", new KulichShuchenka());
+        startActivity(intent);
+    }
+    public void onBrownieClick(View view) {
+        Intent intent = new Intent(this,MainActivity.class);
+        intent.putExtra("Recept", new Brownie());
         startActivity(intent);
     }
 }

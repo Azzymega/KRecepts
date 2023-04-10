@@ -23,7 +23,7 @@ public class AReceptActivity extends AppCompatActivity {
     public ARecept RecieveRecept(){
         return (ARecept) getIntent().getExtras().getSerializable("Recept");
     }
-    public void Init(){
+    public void Init(){ // Стоит реализовать базу SQLite.
         recept = RecieveRecept();
         receptName.setText("Рецепт: " + recept.receptName);
         prodCount.setText("Количество порций: " + recept.prodCount);
@@ -33,7 +33,7 @@ public class AReceptActivity extends AppCompatActivity {
             stepList.setText(stepList.getText()+"\n\n"+step);
         }
         for (Good good : recept.goodList){
-            goodList.setText(goodList.getText()+"\n"+good.name);
+            goodList.setText(goodList.getText()+"\n"+good.returnName());
         }
     }
 }

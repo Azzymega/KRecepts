@@ -9,17 +9,20 @@ public class ARecept implements Serializable {
     String receptName;
     ArrayList<Good> goodList;
     ArrayList<String> stepList;
-    public ARecept(int prodCount, int timeCount, String receptName){
+
+    public ARecept(int prodCount, int timeCount, String receptName) {
         this.prodCount = prodCount;
         this.timeCount = timeCount;
         this.receptName = receptName;
         goodList = new ArrayList<Good>();
         stepList = new ArrayList<String>();
     }
-    public void AppendGood(Good good){
+
+    public void AppendGood(Good good) {
         goodList.add(good);
     }
-    public void AppendStep(String step){
+
+    public void AppendStep(String step) {
         stepList.add(step);
     }
 }
